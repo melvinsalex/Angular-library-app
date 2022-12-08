@@ -59,8 +59,7 @@ export class MembershipComponent implements OnInit {
   } 
   form4(){
     this.service.createELEMENT_DATA({...this.firstFormGroup.value})
-    .subscribe(data=>{
-    })
+    .subscribe()
     this.dialog.closeAll();
   }
  

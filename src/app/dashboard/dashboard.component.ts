@@ -65,8 +65,8 @@ this.router.navigate(['description/',id])
 }
 favFunc(data:any){
   this.service.updateFav(data)
-  .subscribe(d=>{
+  .subscribe()
   window.location.reload()
-  })
+
 }
 }
