@@ -7,7 +7,6 @@ export class SampleDirective {
     constructor(private element: ElementRef) {}
 
     @HostListener('mouseenter') onMouseEnter() {
-        console.log('------', this.element.nativeElement);
         this.element.nativeElement.style.color = 'green';
         this.element.nativeElement.style['background-color'] = 'yellow';
         this.element.nativeElement.style['font-size'] = 'xx-large'

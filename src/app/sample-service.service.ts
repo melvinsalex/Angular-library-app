@@ -41,7 +41,6 @@ data:any
   }
   
   getELEMENT_DATA(){
-    // return this.http.get(this.API_URL)
     this.http.get(this.API_URL)
     .subscribe(val=> {
       this.dataSubject$.next(val);

@@ -1,4 +1,4 @@
-<!-- <form> -->
+
 
   <button mat-raised-button (click)="isEditable = !isEditable">
     {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
@@ -75,7 +75,6 @@
           </mat-form-field><br>
           <mat-form-field appearance="fill">
             <mat-label>State</mat-label>
-            <!-- <input matInput formControlName="state" required autocomplete="off" autofocus="off"> -->
             <mat-select [formControl]="state" name="state">
               <mat-option *ngFor="let state of states" [value]="state">
                 {{state.name}}
@@ -85,12 +84,9 @@
         </form>
         <div>
           <button mat-button matStepperPrevious>Back</button>
-          <!-- <button mat-button  (click)="login()">Finish</button> -->
           <button mat-button (click)="stepper.reset()">Reset</button>
 
           <button mat-button type="submit" (click)="formOne.ngSubmit.emit();formTwo.ngSubmit.emit();formThree.ngSubmit.emit();formFour.ngSubmit.emit();">Submit</button>
-          <!-- <button mat-button type="submit" (click)="formOne.ngSubmit.emit();">Submit</button> -->
 
 
         </div>
-<!-- </form> -->

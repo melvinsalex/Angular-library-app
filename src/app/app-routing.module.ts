@@ -11,7 +11,6 @@ import { MyGuard} from './sample-service.service';
 
 
 const routes: Routes = [
-  // {path:'',component:DashboardComponent},
   {path:'description/:id',component:DescriptionComponent},
   {path:'',component:LoginComponent},
   {path:'dashboard',canActivate:[MyGuard],component:DashboardComponent},

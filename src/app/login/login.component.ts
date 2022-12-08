@@ -20,7 +20,7 @@ constructor(private router:Router,private _snackBar:MatSnackBar,private service:
       password:new FormControl(this.data?.password?? ''),
 
     })
-    console.log('----',this.data)
+    
     
     
   }
@@ -40,13 +40,12 @@ dashboard(){
   }
   login(data:any){
     this.service.login(data).subscribe(d=>{
-      console.log('---------', d);
+      
       this.service.setLoginStatus(true)
        localStorage.setItem('LoginSuccessful','true')
        localStorage.setItem('email',data.email)
 
 
-      // console.log(localStorage.getItem('LoginSuccessful'))
       
        this.router.navigate(['/dashboard'])
     

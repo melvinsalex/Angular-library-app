@@ -28,9 +28,7 @@ export class MembershipComponent implements OnInit {
     bookName: ['', Validators.required],
     author: ['', Validators.required],
     genre: ['', Validators.required],
-    // dob: ['', Validators.required],
-    // gender: ['', Validators.required],
-    // thirdCtrl: ['', Validators.required],
+    
 
 
 
@@ -54,38 +52,27 @@ export class MembershipComponent implements OnInit {
     this.router.navigate(['login/'])
     }
   form1(){
-    console.log(this.firstFormGroup.value);
       
   }
   form2(){
-    console.log(this.secondFormGroup.value);
     
   } 
   form3(){
-    console.log(this.thirdFormGroup.value);
     
   } 
   form4(){
-    console.log(this.fourthFormGroup.value);
     this.service.createELEMENT_DATA({...this.firstFormGroup.value})
     .subscribe(a=>{console.log("-----a--",a);
     })
     this.dialog.closeAll();
   }
  
-// submit(){
-//   this.service.createELEMENT_DATA({...this.firstFormGroup.value})
-//   .subscribe(a=>{console.log("-----a--",a);
-//   })
-//   this.dialog.closeAll();
-// }
   isEditable = true;
 
   constructor(private router:Router,private _formBuilder: FormBuilder,private service: SampleServiceService,public dialog:MatDialog) {}
   
   ngOnInit(): void {
     this.countries=Country.getAllCountries()
-     // console.log(Country.getAllCountries())
  this.fourthFormGroup=new FormGroup({
    country:this.country,
    state:this.state
@@ -94,8 +81,6 @@ export class MembershipComponent implements OnInit {
  
  this.country.valueChanges.subscribe((d:any)=>{
    this.states=State.getStatesOfCountry(d.isoCode)
-   console.log('----',d)
-   console.log('----',this.states)
  
  })
    }

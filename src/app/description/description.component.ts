@@ -12,23 +12,23 @@ import { SampleServiceService } from '../sample-service.service';
 })
 export class DescriptionComponent {
   idDetails:any
-  // data:"idDetails" | undefined
+
   
 
 
 constructor(private route:ActivatedRoute,private service:SampleServiceService, private dialog:MatDialog ,private router:Router){}
 
 ngOnInit(){
-  console.log('===id==',this.route.snapshot.params['id'])
+  
   this.service.getDetails(this.route.snapshot.params['id']).subscribe(x => {
     this.idDetails=x
-    console.log('---',x)
+    
   });
 
 }
 
 editRow(yourData:any){
-  console.log("edit is working");
+  
   
   const dialogRef = this.dialog.open(AddBookComponent, {
     height: "300px",
@@ -40,7 +40,7 @@ editRow(yourData:any){
     
   });
 
-  // console.log(dialogRef);`
+  
   
   dialogRef.afterClosed().subscribe(result=>{
     console.log(`Dialog result: ${result}`);

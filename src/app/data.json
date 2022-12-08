@@ -57,11 +57,10 @@
       "fav": false
     },
     {
-      "bookName": "trial44",
+      "bookName": "trial443",
       "author": "dff",
       "genre": "jhhjhj",
-      "id": 9,
-      "fav": false
+      "id": 9
     },
     {
       "bookName": "888",
@@ -125,6 +124,12 @@
       "genre": "m",
       "id": 19,
       "fav": false
+    },
+    {
+      "bookName": "daii",
+      "author": "m",
+      "genre": "n",
+      "id": 20
     }
   ],
   "genre_data": [

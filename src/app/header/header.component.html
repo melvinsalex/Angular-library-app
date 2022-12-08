@@ -2,23 +2,19 @@
    <div id="image"> <img src="\assets\Muraai_Logo.webp" alt="image"></div>
    
 
-<!-- <h1 >Muraai information technologies<button mat-button (click)="addBook()">Add</button></h1> -->
+
 <h1 sample>Muraai Information Technologies</h1>
   <button class="addbutton" mat-button (click)="addPerson()"  *ngIf="loggedIn$ | async" appHighlight>Add</button> <div class="example-sidenav-content">
    <button *ngIf="loggedIn$ | async" id="namebutton" mat-stroked-button [matMenuTriggerFor]="menu">{{f | titlecase }}{{l | titlecase }}</button>
    <mat-menu #menu="matMenu" class="menu">
       <mat-card class="example-card">
          <mat-card-header class="cardheader">
-           <!-- <div mat-card-avatar class="example-header-image"></div> -->
            <mat-card-title > {{name | titlecase }}</mat-card-title>
-           <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
          </mat-card-header>
          <mat-card-content>
             
            <h3 >{{name | titlecase }}</h3>
-          <!-- <mat-icon class="picon">account_circle</mat-icon> -->
            <h5>{{a}}</h5>
-           <!-- <h5>my profile </h5> -->
          
          </mat-card-content>
          
@@ -50,29 +46,5 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<!-- <mat-drawer-container  class="example-container" > -->
-
-<!-- <mat-drawer #drawer class="example-sidenav" mode="side">
-   <button  mat-button  (click)="booksFunc()"> 
-     Books       
-   </button><br><br>
-   <button  mat-button (click)="genreFunc()"> 
-     Genre    
-   </button><br><br>
-   <button  mat-button (click)="fav()"> 
-     Favourites
-   </button><br><br>
-   
-   <button  mat-button (click)="logOut()"> 
-     Log Out
-   </button>
- </mat-drawer>
-
- <div class="example-sidenav-content">
-   <button type="button" mat-button (click)="drawer.toggle()">
-     Menu
-   </button>
- </div> -->
-<!-- </mat-drawer-container> -->
 
  

@@ -1,38 +1,3 @@
-// import { Component ,OnInit} from '@angular/core';
-// import { Observable, of } from 'rxjs';
-// import { SampleServiceService } from '../sample-service.service';
-
-// @Component({
-//   selector: 'app-header',
-//   templateUrl: './header.component.html',
-//   styleUrls: ['./header.component.css']
-// })
-// export class HeaderComponent implements OnInit{
-//   displayedColumns = ['id','bookName','author','genre','star'];
-
-//   constructor(private service:SampleServiceService){}
-//   dataSource : Observable<any>=of([{}])
-
-//   ngOnInit(): void {
-//     this.dataSource=this.service.getELEMENT_DATA();
-//   }
-
-
-//   addRow(){
-//     this.service.createELEMENT_DATA({
-//       id:120,
-//       bookName:"qwertyuiop",
-//       author:"poiuy",
-//       genre:"comedy"
-//     }).subscribe(d=>(
-//       console.log('===========',d)
-      
-//     ))
-
-
-//   }
-// }
-//--------------------------------------------------------------------------
 
 import {Component,OnInit} from '@angular/core'
 import { MatDialog }  from '@angular/material/dialog';
@@ -63,15 +28,13 @@ export class HeaderComponent implements OnInit {
   constructor(private dialog: MatDialog,private router:Router, private service: SampleServiceService){}
   ngOnInit(): void {
      this.loggedIn$ = this.service.loggedIn$;
-     console.log('------lo-----')
+    
       this.a=localStorage.getItem('email')
       this.name=this.a?.split('.').join(' ').split('@',1).join('')
       this.f=((this.name?.split(' ',1))[0])[0]
 
       this.l=((this.name?.split(' ',2))[1])[0]
-      // this.f=this.f.toUppercase()
-
-      // this.l=this.l.toUppercase()
+      
 
 
   }
@@ -81,10 +44,7 @@ export class HeaderComponent implements OnInit {
       width:"230px",
       
     });
-    dialogRef.afterClosed().subscribe(result=>{
-      console.log(`Dialog result: ${result}`);
-      
-    })
+    dialogRef.afterClosed().subscribe()
 
   }
 
@@ -95,15 +55,12 @@ export class HeaderComponent implements OnInit {
       width:"750px",
       
     });
-    dialogRef.afterClosed().subscribe(result=>{
-      console.log(`Dialog result: ${result}`);
-      
-    })
+    dialogRef.afterClosed().subscribe()
   }
 
 
   onSearch(value:any){
-    console.log('-----',value);
+    // console.log('-----',value);
     this.service.searchItem(value)
     
   }
@@ -120,20 +77,19 @@ export class HeaderComponent implements OnInit {
   }
   booksFunc(){
     this.router.navigate(['dashboard/'])
-    // window.location.reload()
+    
 
 
   }
   
   logOut(){
-    console.log("logout");
+    
     
     
       localStorage.setItem('LoginSuccessful','false')
       this.service.setLoginStatus(false);
 
-    //  console.log(localStorage.getItem('LoginSuccessful'))
-    //  localStorage.clear()
+  
 
       this.router.navigate(['/login'])
       // window.location.reload()

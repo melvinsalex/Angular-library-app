@@ -12,23 +12,18 @@ import { SampleServiceService } from '../sample-service.service';
 })
 export class FavCmpComponent implements OnInit {
   displayedColumns = ['id','bookName','author','genre','star',];
-  // dataSource: any;
+  
 
   dataSource:  Observable<any>=of([{}])
   constructor(private service:SampleServiceService){}
   
 
   ngOnInit():void{
-   // this. dataSource=this.service.getELEMENT_DATA()
+   
    this.service.getELEMENT_DATA()
      this. dataSource=this.service.dataEvents$
 
-    // .subscribe((data)=>{
-    //   this.favDetails=data
     
-    //   console.log(this.favDetails)
-    // })
-    //----------------
     .pipe(map((a:any)=>{
       console.log('=====a====',a);
       
