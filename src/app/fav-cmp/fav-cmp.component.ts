@@ -24,10 +24,10 @@ export class FavCmpComponent implements OnInit {
      this. dataSource=this.service.dataEvents$
 
     
-    .pipe(map((a:any)=>{
-      console.log('=====a====',a);
+    .pipe(map((value:any)=>{
       
-     return (a.filter((n:any)=> n.fav))
+      
+     return (value.filter((data:any)=> data.fav))
     }))
     
    }

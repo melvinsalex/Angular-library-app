@@ -11,9 +11,6 @@ import { MatDialog } from '@angular/material/dialog';
 
 
 
-
-
-
  @Component({
   selector: 'app-membership',
   templateUrl: './membership.component.html',
@@ -62,7 +59,7 @@ export class MembershipComponent implements OnInit {
   } 
   form4(){
     this.service.createELEMENT_DATA({...this.firstFormGroup.value})
-    .subscribe(a=>{console.log("-----a--",a);
+    .subscribe(data=>{
     })
     this.dialog.closeAll();
   }
@@ -79,8 +76,8 @@ export class MembershipComponent implements OnInit {
  
  })
  
- this.country.valueChanges.subscribe((d:any)=>{
-   this.states=State.getStatesOfCountry(d.isoCode)
+ this.country.valueChanges.subscribe((value:any)=>{
+   this.states=State.getStatesOfCountry(value.isoCode)
  
  })
    }

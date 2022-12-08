@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AddBookComponent } from '../add-book/add-book.component';
 import { SampleServiceService } from '../sample-service.service';
-import {MatPaginator} from '@angular/material/paginator';
+
 
 
 
@@ -52,10 +52,7 @@ export class DashboardComponent implements OnInit {
 
 
     
-    dialogRef.afterClosed().subscribe(result=>{
-      
-      
-    })
+    dialogRef.afterClosed().subscribe()
 
   }
   
@@ -68,7 +65,7 @@ this.router.navigate(['description/',id])
 }
 favFunc(data:any){
   this.service.updateFav(data)
-  .subscribe(d=>{console.log('-----',d);
+  .subscribe(d=>{
   window.location.reload()
   })
 }

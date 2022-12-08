@@ -15,10 +15,10 @@ import { SampleServiceService } from '../sample-service.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  a:any;
+  mail:any;
   name:any;
-  f:any;
-  l:any;
+  firstName:any;
+  lastName:any;
   title = 'Angular Search Using ng2-search-filter';
 
   searchText: any;
@@ -29,11 +29,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
      this.loggedIn$ = this.service.loggedIn$;
     
-      this.a=localStorage.getItem('email')
-      this.name=this.a?.split('.').join(' ').split('@',1).join('')
-      this.f=((this.name?.split(' ',1))[0])[0]
+      this.mail=localStorage.getItem('email')
+      this.name=this.mail?.split('.').join(' ').split('@',1).join('')
+      this.firstName=((this.name?.split(' ',1))[0])[0]
 
-      this.l=((this.name?.split(' ',2))[1])[0]
+      this.lastName=((this.name?.split(' ',2))[1])[0]
       
 
 

@@ -1,6 +1,4 @@
-#image{
 
-}
 #div{
     background-color: rgb(189, 198, 195);
 }
@@ -8,8 +6,7 @@
 border-radius: 50%;
 background-color: rgb(174, 218, 248);
 
-/* width: 35px;
-height:40px; */
+
 }
 h1{
   justify-content: center;
@@ -18,7 +15,6 @@ h1{
   
 }
 .cardheader{
-  /* background-image:url("\assets\White-Light-plain-Background-Design-Download.webp"); */
   background-image:url("\assets\pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg");
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color:aliceblue;
@@ -35,8 +31,7 @@ h1{
   border-radius: 50px;
   display: flex;
   float: right;
-  /* justify-content: right; */
-  /* margin-left: 1000px; */
+ 
   
 }
 .menu{
@@ -51,15 +46,13 @@ h1{
 
 }
 .addbutton{
-  /* display: flex; */
- /* float:center; */
+  
  position: absolute;
  left: 60px;
   
 }
 .search{
-  /* display: flex;
-  float: right; */
+  
   position: absolute;
   top:0;
   right:0;

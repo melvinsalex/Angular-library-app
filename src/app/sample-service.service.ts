@@ -86,9 +86,6 @@ data:any
   }
   
   
-  // loginPassword(){
-  //   return this.http.post(this.Reqres,)
-  // }
 }
 export class MyGuard implements CanActivate{
   canActivate(route:ActivatedRouteSnapshot,state:RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {

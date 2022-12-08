@@ -6,7 +6,7 @@
     background-image: ('assets\71l6aEDzaFS.jpg');
     background-size: cover;
   } */
-  .i{
+  .card{
     display: flex;
     align-items: left;
     justify-content: left;

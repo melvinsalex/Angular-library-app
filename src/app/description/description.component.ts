@@ -20,8 +20,8 @@ constructor(private route:ActivatedRoute,private service:SampleServiceService, p
 
 ngOnInit(){
   
-  this.service.getDetails(this.route.snapshot.params['id']).subscribe(x => {
-    this.idDetails=x
+  this.service.getDetails(this.route.snapshot.params['id']).subscribe(data => {
+    this.idDetails=data
     
   });
 
@@ -42,15 +42,12 @@ editRow(yourData:any){
 
   
   
-  dialogRef.afterClosed().subscribe(result=>{
-    console.log(`Dialog result: ${result}`);
-    
-  })
+  dialogRef.afterClosed().subscribe()
 
 }
 
 deleteRow(id:any){
-  this.service.deleteELEMENT_DATA(id).subscribe(d=>
+  this.service.deleteELEMENT_DATA(id).subscribe(data=>
     {this.router.navigate(["dashboard"])});
 }
 
