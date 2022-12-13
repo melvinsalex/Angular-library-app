@@ -16,8 +16,17 @@ const routes: Routes = [
   {path:'dashboard',canActivate:[MyGuard],component:DashboardComponent},
   {path:'membership',component:MembershipComponent},
   {path:'login',component:LoginComponent},
-  {path:'genre-cmp',canActivate:[MyGuard],component:GenreCmpComponent},
-  {path:'fav-cmp',canActivate:[MyGuard],component:FavCmpComponent}
+  {path:'genre-cmp',canActivate:[MyGuard],component:GenreCmpComponent,
+  children:[
+    {path:'comics',canActivate:[MyGuard],component:GenreCmpComponent},
+    {path:'sci-fi',canActivate:[MyGuard],component:GenreCmpComponent},
+    {path:'drama',canActivate:[MyGuard],component:GenreCmpComponent}
+
+  ]},
+
+  {path:'fav-cmp',canActivate:[MyGuard],component:FavCmpComponent},
+  //  {path: 'book',canActivate:[MyGuard],component:BookComponent,
+   
 
 
 

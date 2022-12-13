@@ -1,8 +1,9 @@
-import { Component,OnInit, ViewChild, } from '@angular/core';
+import { Component,OnInit, ViewChild,OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject, Subscription, takeUntil } from 'rxjs';
 import { AddBookComponent } from '../add-book/add-book.component';
+import { ELEMENT_DATA } from '../model';
 import { SampleServiceService } from '../sample-service.service';
 
 
@@ -14,17 +15,26 @@ import { SampleServiceService } from '../sample-service.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit  {
   displayedColumns = ['id','bookName','author','genre','star','dots'];
 
 
- 
+ onDestroy$ =  new Subject<boolean>()
 
   
   constructor(private service:SampleServiceService,private route:ActivatedRoute,private router:Router,private dialog:MatDialog){}
-
   
-  dataSource : Observable<any>=of([{}])
+  
+  dataSource : Observable<ELEMENT_DATA[]>=of([{
+    bookName: '',
+    author: '',
+    genre: '',
+    id: '',
+    fav: false
+
+  }])
+  
+
   
  
   ngOnInit():void{
@@ -52,12 +62,12 @@ export class DashboardComponent implements OnInit {
 
 
     
-    dialogRef.afterClosed().subscribe()
+   dialogRef.afterClosed().pipe(takeUntil(this.onDestroy$)).subscribe()
 
   }
   
   deleteRow(id:any){
-    this.service.deleteELEMENT_DATA(id).subscribe();
+    this.service.deleteELEMENT_DATA(id).pipe(takeUntil(this.onDestroy$)).subscribe();
   }
   
 card(id:any){
@@ -65,8 +75,13 @@ this.router.navigate(['description/',id])
 }
 favFunc(data:any){
   this.service.updateFav(data)
-  .subscribe(()=>{
+  .pipe(takeUntil(this.onDestroy$)).subscribe(()=>{
   window.location.reload()
   })
+  
+}
+ngOnDestroy(): void {
+  this.onDestroy$.next(true)
+  this.onDestroy$.complete()
 }
 }

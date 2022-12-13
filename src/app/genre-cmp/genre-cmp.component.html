@@ -1,20 +1,26 @@
 
 <div class="row row-cols-1 row-cols-md-3" >
-    <div class="col-mb-4" *ngFor="let card of genreData" ><br>
+    <div class="col-mb-4" *ngFor="let card of cardsData | async" ><br>
+        <!-- <div class="col-mb-4" *ngFor="let card of bookData  " ><br> -->
+
 
 
         <mat-card class="example-card" >
+        
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title >{{card.genre}}</mat-card-title>
+                <mat-card-title >{{card?.genre}}</mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="{{card.image}}"
+            <img class="image" mat-card-image src="{{card.image}}"
                 alt="Photo">
             <mat-card-content>
 
-                {{card.about}}
+                {{card?.about?? " "}}
             </mat-card-content>
-           
+            <mat-card-content>
+
+                {{card?.book??" "}}
+            </mat-card-content>
         </mat-card>
     </div>
 </div>
