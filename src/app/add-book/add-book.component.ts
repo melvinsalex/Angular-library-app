@@ -30,12 +30,13 @@ export class AddBookComponent implements OnInit {
     
   }
 submit(data:any){
-  this.serv.createELEMENT_DATA({...data.value,bookName:data.value['bookName']}).subscribe(s =>{
-   window.location.reload();
+  this.serv.createELEMENT_DATA({...data.value,bookName:data.value['bookName']}).subscribe(() =>{
+    this.dialog.closeAll();
+
+    window.location.reload();
     
     
   });
-  this.dialog.closeAll();
   
   
 }

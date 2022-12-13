@@ -5,7 +5,7 @@
 
 <h1 sample>Muraai Information Technologies</h1>
   <button class="addbutton" mat-button (click)="addPerson()"  *ngIf="loggedIn$ | async" appHighlight>Add</button> <div class="example-sidenav-content">
-   <button *ngIf="loggedIn$ | async" id="namebutton" mat-stroked-button [matMenuTriggerFor]="menu">{{f | titlecase }}{{l | titlecase }}</button>
+   <button *ngIf="loggedIn$ | async" id="namebutton" mat-stroked-button [matMenuTriggerFor]="menu">{{firstName | titlecase }}{{lastName | titlecase }}</button>
    <mat-menu #menu="matMenu" class="menu">
       <mat-card class="example-card">
          <mat-card-header class="cardheader">
@@ -14,7 +14,7 @@
          <mat-card-content>
             
            <h3 >{{name | titlecase }}</h3>
-           <h5>{{a}}</h5>
+           <h5>{{mail}}</h5>
          
          </mat-card-content>
          
