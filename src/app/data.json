@@ -4,18 +4,18 @@
       "bookName": "Adventures o",
       "author": "Mark Twain",
       "genre": "folklore",
-      "id": 1,
+      "id": "1",
       "fav": false
     },
     {
       "bookName": "Agni Veena ",
       "author": "Kazi Nasrul Islam",
       "genre": "poem",
-      "id": 2,
-      "fav": false
+      "id": "2",
+      "fav": true
     },
     {
-      "id": 3,
+      "id": "3",
       "bookName": "Animal Farm",
       "author": " George Orwell",
       "genre": "satire",
@@ -25,32 +25,32 @@
       "bookName": "Ben Hur",
       "author": "Lewis Wallace",
       "genre": "history",
-      "id": 4,
-      "fav": true
+      "id": "4",
+      "fav": false
     },
     {
-      "id": 5,
+      "id": "5",
       "bookName": "Baburnama",
       "author": " Babur",
       "genre": "biography",
-      "fav": true
+      "fav": false
     },
     {
-      "id": 6,
+      "id": "6",
       "bookName": "Arthashastra",
       "author": "Kautilya",
       "genre": "political",
       "fav": false
     },
     {
-      "id": 7,
+      "id": "7",
       "bookName": "Anand Math",
       "author": "Bankimchandra Chattopadhyay",
       "genre": "fiction",
       "fav": false
     },
     {
-      "id": 8,
+      "id": "8",
       "bookName": "Mein Kampf",
       "author": "Adolf Hitler",
       "genre": "autobiograpy",
@@ -60,76 +60,76 @@
       "bookName": "trial443",
       "author": "dff",
       "genre": "jhhjhj",
-      "id": 9
+      "id": "9"
     },
     {
       "bookName": "888",
       "author": "hhuu",
       "genre": "gyuguyj",
-      "id": 10,
+      "id": "10",
       "fav": false
     },
     {
-      "bookName": "uuuu",
+      "bookName": "Superman: Son of Kal",
       "author": "mmm",
-      "genre": "",
-      "id": 11,
+      "genre": "comics",
+      "id": "11",
       "fav": false
     },
     {
       "bookName": "hp",
       "author": "zzzzzz",
       "genre": "xxxxxxxxxxxxxxxx",
-      "id": 12,
+      "id": "12",
       "fav": false
     },
     {
       "bookName": "hp",
       "author": "zzzzzz",
       "genre": "xxxxxxxxxxxxxxxx",
-      "id": 13,
+      "id": "13",
       "fav": false
     },
     {
       "bookName": "hp1",
       "author": "aaaaa",
       "genre": "aaaaaaaa",
-      "id": 14,
+      "id": "14",
       "fav": false
     },
     {
       "bookName": "hp1",
       "author": "aaaaa",
       "genre": "aaaaaaaa",
-      "id": 15,
+      "id": "15",
       "fav": false
     },
     {
       "bookName": "hp2",
       "author": "aaaaaaaaaaa",
       "genre": "aaaaaaaaaaaaaaa",
-      "id": 16,
+      "id": "16",
       "fav": false
     },
     {
       "bookName": "jj",
       "author": "44444444444444",
       "genre": "aa",
-      "id": 18,
+      "id": "18",
       "fav": false
     },
     {
       "bookName": "hp3",
       "author": "m",
       "genre": "m",
-      "id": 19,
+      "id": "19",
       "fav": false
     },
     {
       "bookName": "daii",
       "author": "m",
       "genre": "n",
-      "id": 20
+      "id": "20"
     }
   ],
   "genre_data": [
@@ -162,6 +162,53 @@
       "genre": "Mystery",
       "image": "https://wallpapercave.com/dwp2x/wp3856501.jpg",
       "about": "Also called detective fiction, this book genre is characterized by a gripping plot that revolves around a mystery — but hopefully, you’ve cracked that clue! The setting, characters, and tone of your book will determine precisely which category it falls under: cozy mystery, hardboiled, or something in between. But at the core of any mystery is a crime that must be solved by the protagonist. To get a sense of the clever trail of clues that’s so vital to this genre, check out Murder on the Orient Express by Agatha Christie — the grande dame of mystery fiction."
+    }
+  ],
+  "books": [
+    {
+      "genre": "comics",
+      "book": "Superman: Son of Kal",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1646179498l/60533323.jpg"
+    },
+    {
+      "genre": "comics",
+      "book": "Spider-Man/Venom",
+      "image": "https://m.media-amazon.com/images/I/511SB91kDbL.jpg"
+    },
+    {
+      "genre": "drama",
+      "book": "Then She Was Gone",
+      "image": "https://m.media-amazon.com/images/I/51B0Ap3DpmL._SX320_BO1,204,203,200_.jpg"
+    },
+    {
+      "genre": "drama",
+      "book": "Superman: Son of Kal",
+      "image": "https://m.media-amazon.com/images/I/51B0Ap3DpmL._SX320_BO1,204,203,200_.jpg"
+    },
+    {
+      "genre": "drama",
+      "book": "Then She Was Gone",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1646179498l/60533323.jpg"
+    },
+    {
+      "genre": "drama",
+      "book": "Then She Was Gone",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1646179498l/60533323.jpg"
+    },
+    {
+      "genre": "Sci-fi",
+      "book": "The World We Make",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649700796l/60399181._SY475_.jpg"
+    },
+    {
+      "genre": "Sci-fi",
+      "book": "The World We Make",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649700796l/60399181._SY475_.jpg"
+    },
+    {
+      "genre": "Sci-fi",
+      "book": "The World We Make",
+      "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649700796l/60399181._SY475_.jpg"
     }
   ]
 }

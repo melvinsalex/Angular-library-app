@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Country, State, City }  from 'country-state-city';
 import { SampleServiceService } from '../sample-service.service';
 import { MatDialog } from '@angular/material/dialog';
+import { Subject, takeUntil } from 'rxjs';
 
 
 
@@ -17,7 +18,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./membership.component.css']
 })
 export class MembershipComponent implements OnInit {
-  
+  onDestroy$ = new Subject<boolean>()
+
   states:any
 
   
@@ -59,7 +61,7 @@ export class MembershipComponent implements OnInit {
   } 
   form4(){
     this.service.createELEMENT_DATA({...this.firstFormGroup.value})
-    .subscribe()
+    .pipe(takeUntil(this.onDestroy$)).subscribe()
     this.dialog.closeAll();
   }
  
@@ -75,10 +77,13 @@ export class MembershipComponent implements OnInit {
  
  })
  
- this.country.valueChanges.subscribe((value:any)=>{
+ this.country.valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe((value:any)=>{
    this.states=State.getStatesOfCountry(value.isoCode)
  
  })
    }
- 
+   ngOnDestroy(): void {
+    this.onDestroy$.next(true)
+    this.onDestroy$.complete()
+   }
   }

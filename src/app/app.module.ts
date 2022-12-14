@@ -32,6 +32,8 @@ import { FavCmpComponent } from './fav-cmp/fav-cmp.component';
 import{MatListModule} from '@angular/material/list';
 import { HighlightDirective } from './highlight.directive';
 import { SampleDirective } from './sample.directive';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -55,7 +57,7 @@ import { SampleDirective } from './sample.directive';
     GenreCmpComponent,
     FavCmpComponent,
     HighlightDirective,
-    SampleDirective
+    SampleDirective,
   ],
   imports: [
     BrowserModule,
@@ -77,8 +79,9 @@ import { SampleDirective } from './sample.directive';
     MatStepperModule,
     MatRadioModule,
     MatSelectModule,
-  
     MatListModule,
+    MatExpansionModule,
+    StoreModule.forRoot({}, {})
     
     
 

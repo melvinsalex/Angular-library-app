@@ -1,5 +1,6 @@
 .example-card {
     max-width: 400px;
+    
   }
   
   .example-header-image {
@@ -12,3 +13,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  .image{
+    
+    max-width: 400px;
+    max-height: 400px;
+  }
+  

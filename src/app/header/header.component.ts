@@ -1,8 +1,8 @@
 
-import {Component,OnInit} from '@angular/core'
+import {Component,OnInit,OnDestroy} from '@angular/core'
 import { MatDialog }  from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable, of, Subject } from 'rxjs';
+import { filter, Observable, of, Subject,takeUntil } from 'rxjs';
 import {AddBookComponent} from '../add-book/add-book.component';
 import { MembershipComponent } from '../membership/membership.component';
 import { SampleServiceService } from '../sample-service.service';
@@ -14,7 +14,8 @@ import { SampleServiceService } from '../sample-service.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnDestroy {
+  onDestroy$ = new Subject<boolean>()
   mail:any;
   name:any;
   firstName:any;
@@ -22,8 +23,10 @@ export class HeaderComponent implements OnInit {
   title = 'Angular Search Using ng2-search-filter';
 
   searchText: any;
+  // panelOpenState = false;
 
   loggedIn$: Observable<boolean> = of(false);
+  bookData: any;
 
   constructor(private dialog: MatDialog,private router:Router, private service: SampleServiceService){}
   ngOnInit(): void {
@@ -44,7 +47,7 @@ export class HeaderComponent implements OnInit {
       width:"230px",
       
     });
-    dialogRef.afterClosed().subscribe()
+    dialogRef.afterClosed().pipe(takeUntil(this.onDestroy$)).subscribe()
 
   }
 
@@ -55,12 +58,12 @@ export class HeaderComponent implements OnInit {
       width:"750px",
       
     });
-    dialogRef.afterClosed().subscribe()
+    dialogRef.afterClosed().pipe(takeUntil(this.onDestroy$)).subscribe()
   }
 
 
   onSearch(value:any){
-    // console.log('-----',value);
+    
     this.service.searchItem(value)
     
   }
@@ -79,8 +82,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['dashboard/'])
     
 
+}
 
-  }
   
   logOut(){
     
@@ -92,8 +95,13 @@ export class HeaderComponent implements OnInit {
   
 
       this.router.navigate(['/login'])
-      // window.location.reload()
    
         
      }
+     ngOnDestroy(): void {
+      this.onDestroy$.next(true)
+      this.onDestroy$.complete()
+  }
 }
+
+

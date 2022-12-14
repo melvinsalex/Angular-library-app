@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { SampleServiceService } from '../sample-service.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { SampleServiceService } from '../sample-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  onDestroy$ = new Subject<boolean>()
+
   formdata: any;
   data:any;
 
@@ -39,7 +42,7 @@ dashboard(){
 
   }
   login(data:any){
-    this.service.login(data).subscribe(d=>{
+    this.service.login(data).pipe(takeUntil(this.onDestroy$)).subscribe(d=>{
       
       this.service.setLoginStatus(true)
        localStorage.setItem('LoginSuccessful','true')
@@ -51,5 +54,9 @@ dashboard(){
     
          
     })
+  }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true)
+    this.onDestroy$.complete()
   }
 }
