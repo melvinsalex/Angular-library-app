@@ -15,8 +15,3 @@ export interface genre_data{
 
 }
 
-// export interface books{
-//     genre: string,
-//     book: string,
-//     image: string
-// }

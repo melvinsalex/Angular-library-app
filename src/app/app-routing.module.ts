@@ -25,7 +25,7 @@ const routes: Routes = [
   ]},
 
   {path:'fav-cmp',canActivate:[MyGuard],component:FavCmpComponent},
-  //  {path: 'book',canActivate:[MyGuard],component:BookComponent,
+  
    
 
 

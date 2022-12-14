@@ -63,7 +63,7 @@ export class HeaderComponent implements OnInit,OnDestroy {
 
 
   onSearch(value:any){
-    // console.log('-----',value);
+    
     this.service.searchItem(value)
     
   }
@@ -83,16 +83,7 @@ export class HeaderComponent implements OnInit,OnDestroy {
     
 
 }
-// comicsBooks(){
-//   this.service.getBook_card().pipe(takeUntil(this.onDestroy$))
-//   // .pipe(filter((val:any)=>{return val.genre=='comics'}))
-//   .subscribe((data)=>{
-//     this.bookData=data
-   
-    
 
-//   })
-//}
   
   logOut(){
     
@@ -104,7 +95,6 @@ export class HeaderComponent implements OnInit,OnDestroy {
   
 
       this.router.navigate(['/login'])
-      // window.location.reload()
    
         
      }

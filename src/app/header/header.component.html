@@ -36,7 +36,6 @@
   <mat-sidenav #snav mode="side"  >
     <mat-nav-list *ngIf="loggedIn$ | async">
       <a mat-list-item routerLink="/dashboard" (click)="snav.toggle()">Books</a>
-      <!-- <a mat-list-item routerLink="/genre-cmp" (click)="snav.toggle()">Genre</a> -->
       <mat-accordion>
         <mat-expansion-panel hideToggle>
           <mat-expansion-panel-header>
@@ -54,9 +53,7 @@
 
 
         </mat-expansion-panel>
-        <!-- <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false"> -->
-          
+      
           </mat-accordion>
       <a mat-list-item routerLink="/fav-cmp" (click)="snav.toggle()">Favourites</a>
       <a mat-list-item routerLink="/" (click)="logOut()">Logout</a>

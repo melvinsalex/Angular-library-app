@@ -2,10 +2,7 @@
     max-width: 400px;
   }
   
-  /* .example-header-image {
-    background-image: ('assets\71l6aEDzaFS.jpg');
-    background-size: cover;
-  } */
+ 
   .card{
     display: flex;
     align-items: left;

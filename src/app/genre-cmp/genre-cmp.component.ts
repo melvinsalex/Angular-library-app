@@ -20,10 +20,7 @@ export class GenreCmpComponent implements OnInit, OnDestroy {
   constructor(private service: SampleServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.service.getGenre_card().pipe(takeUntil(this.onDestroy$)).subscribe((data)=>{
-    //   this.genreData=data
-
-    //   })
+    
     this.router.events.pipe(takeUntil(this.onDestroy$), filter(event => event instanceof NavigationStart)).subscribe((route: any) => {
       if (!route.url.includes('comics') && !route.url.includes('sci-fi') && !route.url.includes('drama')) {
         this.cardsData = this.service.getGenre_card()
