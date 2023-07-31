@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { filter, map, Observable, of } from 'rxjs';
+import { filter, map, Observable, of, Subject, takeUntil } from 'rxjs';
+import { ELEMENT_DATA } from '../model';
 import { SampleServiceService } from '../sample-service.service';
 
 
@@ -13,8 +14,15 @@ import { SampleServiceService } from '../sample-service.service';
 export class FavCmpComponent implements OnInit {
   displayedColumns = ['id','bookName','author','genre','star',];
   
+  onDestroy$ =  new Subject<boolean>()
 
-  dataSource:  Observable<any>=of([{}])
+  dataSource:  Observable<ELEMENT_DATA[]>=of([{
+    bookName: '',
+    author: '',
+    genre: '',
+    id: '',
+    fav: false
+  }])
   constructor(private service:SampleServiceService){}
   
 
@@ -32,7 +40,17 @@ export class FavCmpComponent implements OnInit {
     
    }
 
+   favFunc(data:any){
+    this.service.updateFav(data)
+    .pipe(takeUntil(this.onDestroy$)).subscribe(()=>{
+    window.location.reload()
+    })
     
+  }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true)
+    this.onDestroy$.complete()
+  }
       
 }
    

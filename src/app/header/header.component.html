@@ -36,7 +36,25 @@
   <mat-sidenav #snav mode="side"  >
     <mat-nav-list *ngIf="loggedIn$ | async">
       <a mat-list-item routerLink="/dashboard" (click)="snav.toggle()">Books</a>
-      <a mat-list-item routerLink="/genre-cmp" (click)="snav.toggle()">Genre</a>
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Genre
+            </mat-panel-title>
+           
+          </mat-expansion-panel-header>
+          <a mat-list-item routerLink="/genre-cmp" (click)="snav.toggle()">Popular Genres</a>
+          <a mat-list-item routerLink="/genre-cmp/comics" (click)="snav.toggle()">Comics</a>
+          <a mat-list-item routerLink="/genre-cmp/sci-fi" (click)="snav.toggle()">Sci-fi</a>
+          <a mat-list-item routerLink="/genre-cmp/drama" (click)="snav.toggle()">Drama</a>
+
+          
+
+
+        </mat-expansion-panel>
+      
+          </mat-accordion>
       <a mat-list-item routerLink="/fav-cmp" (click)="snav.toggle()">Favourites</a>
       <a mat-list-item routerLink="/" (click)="logOut()">Logout</a>
     </mat-nav-list>
