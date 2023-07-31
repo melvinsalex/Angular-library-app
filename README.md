@@ -1,4 +1,7 @@
-# Muraai
+# Muraai-library
+username: eve.holt@reqres.in
+password: any
+json: json-server --watch ./src/app/data.json
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
