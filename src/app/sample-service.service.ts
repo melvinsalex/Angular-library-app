@@ -12,7 +12,7 @@ export class SampleServiceService {
 data:any
   private loggedin: BehaviorSubject<boolean> = new BehaviorSubject(JSON.parse(localStorage.getItem('LoginSuccessful') ?? 'false'));
   loggedIn$ = this.loggedin.asObservable();
-
+user  = new BehaviorSubject("username")
   fromService='This is free Service'
   private message = new BehaviorSubject<string>('default message')
   getMessage = this.message.asObservable();

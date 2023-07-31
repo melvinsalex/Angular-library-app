@@ -34,7 +34,9 @@ export class HeaderComponent implements OnInit {
       this.firstName=((this.name?.split(' ',1))[0])[0]
 
       this.lastName=((this.name?.split(' ',2))[1])[0]
-      
+     const kkkk= this.service.user.value
+     console.log("dddd", kkkk);
+     
 
 
   }
